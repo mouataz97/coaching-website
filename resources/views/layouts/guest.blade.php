@@ -1,30 +1,131 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="{{app()->getLocale()}}"
+dir="{{app()->getLocale() == 'ar' ? 'rtl':'ltr'}}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+content="Professional women wellness coaching, training and health support">
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
-                {{ $slot }}
-            </div>
-        </div>
-    </body>
+<title>Aura Wellness</title>
+
+
+@vite(['resources/css/app.css','resources/js/app.js'])
+
+</head>
+
+
+
+<body class="bg-white text-gray-900">
+
+
+<header class="bg-white shadow">
+
+<div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+
+<a href="/"
+class="text-3xl font-bold text-blue-900">
+
+Aura<span class="text-rose-500">Care</span>
+
+</a>
+
+
+
+<nav class="space-x-6">
+
+
+<a href="/" class="hover:text-rose-500">
+{{ __('app.home') }}
+</a>
+
+
+<a href="/about" class="hover:text-rose-500">
+{{ __('app.about') }}
+</a>
+
+
+<a href="/services" class="hover:text-rose-500">
+{{ __('app.services') }}
+</a>
+
+
+<a href="/certificates" class="hover:text-rose-500">
+{{ __('app.certificates') }}
+</a>
+
+
+<a href="/contact" class="hover:text-rose-500">
+{{ __('app.contact') }}
+</a>
+
+<div class="flex gap-3">
+
+@if(app()->getLocale() === 'ar')
+    <a href="/lang/fr"
+       class="text-sm px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600 transition">
+        Français
+    </a>
+@else
+    <a href="/lang/ar"
+       class="text-sm px-3 py-1 bg-rose-500 text-white rounded hover:bg-rose-600 transition">
+        العربية
+    </a>
+@endif
+
+</div>
+
+</nav>
+
+
+</div>
+
+
+</header>
+
+
+
+
+<main>
+
+{{ $slot }}
+
+</main>
+
+
+
+
+
+<footer class="bg-blue-950 text-white mt-20">
+
+
+<div class="max-w-7xl mx-auto px-6 py-10">
+
+
+<h2 class="text-2xl font-bold">
+{{ __('app.footer_brand') }}
+</h2>
+
+
+<p class="mt-3 text-gray-300">
+
+{{ __('app.footer_about') }}
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+</body>
+
+
 </html>

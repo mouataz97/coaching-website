@@ -1,8 +1,20 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/lang/{lang}', function ($lang){
+
+if(in_array($lang,['ar','fr'])){
+
+session(['locale'=>$lang]);
+
+}
+
+return back();
+
+});
 
 Route::get('/', [WebsiteController::class,'home'])
 ->name('home');

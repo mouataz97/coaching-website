@@ -1,17 +1,184 @@
-<x-app-layout>
+<x-guest-layout>
 
-<div class="p-10">
 
-<h1 class="text-4xl font-bold">
-Coach Website
+<section class="bg-blue-50">
+
+
+<div class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+
+
+<div>
+
+
+<p class="text-rose-500 font-semibold text-lg">
+
+{{ __('app.womens_wellness') }}
+
+</p>
+
+
+
+<h1 class="mt-5 text-6xl font-bold text-blue-950">
+
+{{ __('app.your_body') }}
+<br>
+{{ __('app.your_strength') }}
+<br>
+{{ __('app.your_confidence') }}
+
 </h1>
 
 
-<p class="mt-5">
-Training - Chiropractic - Health Coaching
+
+<p class="mt-6 text-lg text-gray-600">
+
+{{ __('app.personal_coaching') }}
+
+</p>
+
+
+
+
+<div class="mt-8">
+
+
+<a href="/contact"
+
+class="bg-blue-950 text-white px-8 py-4 rounded-lg shadow">
+
+
+{{ __('app.start_consultation') }}
+
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="bg-white rounded-3xl shadow-xl p-12">
+
+
+<div class="h-96 bg-rose-100 rounded-3xl flex items-center justify-center">
+
+
+<h2 class="text-3xl font-bold text-blue-950">
+
+{{ __('app.wellness') }}
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+
+<h2 class="text-4xl font-bold text-center text-blue-950">
+
+{{ __('app.our_expertise') }}
+
+</h2>
+
+
+
+
+<div class="grid md:grid-cols-3 gap-8 mt-12">
+
+
+
+
+<div class="p-8 rounded-xl shadow bg-white">
+
+
+<h3 class="text-xl font-bold">
+
+{{ __('app.training') }}
+
+</h3>
+
+
+<p class="mt-4 text-gray-600">
+
+{{ __('app.training_desc') }}
+
 </p>
 
 
 </div>
 
-</x-app-layout>
+
+
+
+
+<div class="p-8 rounded-xl shadow bg-white">
+
+
+<h3 class="text-xl font-bold">
+
+{{ __('app.chiropractic') }}
+
+</h3>
+
+
+<p class="mt-4 text-gray-600">
+
+{{ __('app.chiropractic_desc') }}
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="p-8 rounded-xl shadow bg-white">
+
+
+<h3 class="text-xl font-bold">
+
+{{ __('app.health_coaching') }}
+
+</h3>
+
+
+<p class="mt-4 text-gray-600">
+
+{{ __('app.health_coaching_desc') }}
+
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+</x-guest-layout>
