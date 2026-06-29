@@ -48,4 +48,5 @@ return [
     'name' => 'Nom',
     'email_placeholder' => 'E-mail',
     'message_placeholder' => 'Message',
+    'footer_text' => 'Nous aidons les femmes à améliorer leur santé, leur force et leur confiance.',
 ];

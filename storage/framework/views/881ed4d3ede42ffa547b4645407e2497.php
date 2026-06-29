@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
-    dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>"
+    dir="<?php echo e(app()->getLocale() == 'ar' ? 'rtl' : 'ltr'); ?>">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'AuraCare') }}</title>
+    <title><?php echo e(config('app.name', 'AuraCare')); ?></title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <?php echo app('Illuminate\Foundation\Vite')(['resources/css/app.css', 'resources/js/app.js']); ?>
 
-    {{-- Inline script: apply saved theme BEFORE page paint to prevent flash --}}
+    
     <script>
         (function () {
             if (localStorage.theme === 'dark' ||
@@ -27,30 +27,30 @@
     <header class="bg-white dark:bg-slate-800 shadow transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-            {{-- Logo --}}
+            
             <a href="/" class="text-3xl font-bold text-red-900 dark:text-white">
                 Aura<span class="text-rose-500">Care</span>
             </a>
 
-            {{-- Nav + Controls --}}
+            
             <div class="flex items-center gap-6">
 
                 <nav class="flex items-center gap-6 text-gray-700 dark:text-slate-300">
-                    <a href="/" class="hover:text-rose-500 transition-colors">{{ __('app.home') }}</a>
-                    <a href="/about" class="hover:text-rose-500 transition-colors">{{ __('app.about') }}</a>
-                    <a href="/services" class="hover:text-rose-500 transition-colors">{{ __('app.services') }}</a>
-                    <a href="/certificates" class="hover:text-rose-500 transition-colors">{{ __('app.certificates') }}</a>
-                    <a href="/contact" class="hover:text-rose-500 transition-colors">{{ __('app.contact') }}</a>
+                    <a href="/" class="hover:text-rose-500 transition-colors"><?php echo e(__('app.home')); ?></a>
+                    <a href="/about" class="hover:text-rose-500 transition-colors"><?php echo e(__('app.about')); ?></a>
+                    <a href="/services" class="hover:text-rose-500 transition-colors"><?php echo e(__('app.services')); ?></a>
+                    <a href="/certificates" class="hover:text-rose-500 transition-colors"><?php echo e(__('app.certificates')); ?></a>
+                    <a href="/contact" class="hover:text-rose-500 transition-colors"><?php echo e(__('app.contact')); ?></a>
                 </nav>
 
-                {{-- Language switcher --}}
-                @if(app()->getLocale() == 'ar')
+                
+                <?php if(app()->getLocale() == 'ar'): ?>
                     <a href="/lang/fr" class="px-4 py-2 rounded-lg bg-rose-500 text-white text-sm hover:bg-rose-600 transition">FR</a>
-                @else
+                <?php else: ?>
                     <a href="/lang/ar" class="px-4 py-2 rounded-lg bg-blue-950 dark:bg-slate-700 text-white text-sm hover:bg-blue-900 dark:hover:bg-slate-600 transition">العربية</a>
-                @endif
+                <?php endif; ?>
 
-                {{-- Sliding Theme Toggle Switch --}}
+                
                 <button
                     id="theme-toggle-switch"
                     onclick="toggleDark()"
@@ -63,12 +63,12 @@
                         id="theme-toggle-thumb"
                         style="transform: translateX(0)"
                         class="inline-flex items-center justify-center w-[22px] h-[22px] rounded-full bg-white shadow-md transition-transform duration-300">
-                        {{-- Sun icon (visible in light mode) --}}
+                        
                         <svg id="sun-icon" class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                             <circle cx="12" cy="12" r="4"></circle>
                             <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
                         </svg>
-                        {{-- Moon icon (visible in dark mode) --}}
+                        
                         <svg id="moon-icon" class="w-3.5 h-3.5 text-slate-700 hidden" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
@@ -80,13 +80,14 @@
     </header>
 
     <main>
-        {{ $slot }}
+        <?php echo e($slot); ?>
+
     </main>
 
     <footer class="bg-blue-950 dark:bg-slate-950 text-white mt-20 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-6 py-10">
             <h2 class="text-2xl font-bold">AuraCare</h2>
-            <p class="mt-3 text-gray-300">{{ __('app.footer_text') }}</p>
+            <p class="mt-3 text-gray-300"><?php echo e(__('app.footer_text')); ?></p>
         </div>
     </footer>
 
@@ -142,4 +143,4 @@
     </script>
 
 </body>
-</html>
+</html><?php /**PATH D:\Coding\Xampp\htdocs\coaching-website\resources\views/components/guest-layout.blade.php ENDPATH**/ ?>

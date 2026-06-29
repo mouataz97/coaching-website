@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ==========================================
+   Global Transitions
+   ========================================== */
+*, *::before, *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* ==========================================
+   Tailwind dark: variants handle all
+   dark mode styling in the template files.
+   No !important overrides needed here.
+   ========================================== */
