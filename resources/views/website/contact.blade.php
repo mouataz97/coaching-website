@@ -15,7 +15,7 @@
                 class="w-full border border-gray-300 dark:border-slate-600 rounded-xl p-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-slate-500 transition-colors duration-300"
                 rows="5"
                 placeholder="{{ __('app.message_placeholder') }}"></textarea>
-            <button class="mt-6 bg-blue-950 dark:bg-rose-600 text-white px-8 py-3 rounded-full hover:bg-blue-900 dark:hover:bg-rose-700 transition-colors duration-300">
+            <button class="mt-6 bg-red-600 dark:bg-rose-600 text-white px-8 py-3 rounded-full hover:bg-red-700 dark:hover:bg-rose-700 transition-colors duration-300">
                 {{ __('app.send_message') }}
             </button>
         </form>

@@ -26,7 +26,7 @@
 
             <div class="mt-8">
                 <a href="/contact"
-                   class="inline-block bg-blue-950 dark:bg-rose-600 text-white px-8 py-4 rounded-lg shadow hover:bg-blue-900 dark:hover:bg-rose-700 transition-colors duration-300">
+                   class="inline-block bg-red-600 dark:bg-rose-600 text-white px-8 py-4 rounded-lg shadow hover:bg-red-700 dark:hover:bg-rose-700 transition-colors duration-300">
                     <?php echo e(__('app.start_consultation')); ?>
 
                 </a>
